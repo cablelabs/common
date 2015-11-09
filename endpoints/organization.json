@@ -1,12 +1,12 @@
 {
-  "/notifications": {
+  "/organizations": {
     "get": {
       "tags": [
-        "Local Access and Transport Area (Notification)"
+        "Local Access and Transport Area (Organization)"
       ], 
-      "summary": "Fetch all Notifications that meet the query criteria.", 
-      "description": "This service fetches all Notifications that meet the query criteria.", 
-      "displayName": "Notification", 
+      "summary": "Fetch all Organizations that meet the query criteria.", 
+      "description": "This service fetches all Organizations that meet the query criteria.", 
+      "displayName": "Organization", 
       "produces": [
         "application/json", 
         "application/xml"
@@ -15,7 +15,7 @@
         {
           "in": "query", 
           "name": "query", 
-          "description": "Query criteria for filtering the list of Notifications.", 
+          "description": "Query criteria for filtering the list of Organizations.", 
           "required": false, 
           "type": "string", 
           "format": "string"
@@ -32,7 +32,7 @@
         "200": {
           "description": "Successful operation.", 
           "schema": {
-            "$ref": "#/definitions/notificationList"
+            "$ref": "#/definitions/organizationList"
           }
         }, 
         "400": {
@@ -45,10 +45,10 @@
     },
     "post": {
       "tags": [
-        "Notification"
+        "Organization"
       ], 
-      "summary": "Create a new Notification.", 
-      "description": "This service creates a new Notification.", 
+      "summary": "Create a new Organization.", 
+      "description": "This service creates a new Organization.", 
       "consumes": [
         "application/json", 
         "application/xml"
@@ -64,7 +64,7 @@
           "description": "", 
           "required": true, 
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         }
       ], 
