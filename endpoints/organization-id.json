@@ -1,12 +1,12 @@
 {
-  "/notifications/{id}": {
+  "/organizations/{id}": {
     "get": {
       "tags": [
-        "Notifications"
+        "Organizations"
       ],
-      "summary": "Get a single Notification.",
-      "description": "This service looks up a Notification by its ID.",
-      "displayName": "Notification",
+      "summary": "Get a single Organization.",
+      "description": "This service looks up a Organization by its ID.",
+      "displayName": "Organization",
       "produces": [
         "application/json",
         "application/xml"
@@ -31,7 +31,7 @@
         "200": {
           "description": "OK (successful operation).",
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         },
         "404": {
@@ -41,10 +41,10 @@
     },
     "patch": {
       "tags": [
-        "Notifications"
+        "Organizations"
       ],
-      "summary": "Partially update the Notification.",
-      "description": "This service partially updates an existing Notification based on its ID.",
+      "summary": "Partially update the Organization.",
+      "description": "This service partially updates an existing Organization based on its ID.",
       "consumes": [
         "application/json",
         "application/xml"
@@ -67,7 +67,7 @@
           "description": "Resource instance data.",
           "required": true,
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         }
       ],
@@ -75,7 +75,7 @@
         "200": {
           "description": "OK (instance updated).",
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         },
         "400": {
@@ -88,10 +88,10 @@
     },
     "put": {
       "tags": [
-        "Notifications"
+        "Organizations"
       ],
-      "summary": "Fully updates the Notification.",
-      "description": "This service updates an existing Notification based on its ID.",
+      "summary": "Fully updates the Organization.",
+      "description": "This service updates an existing Organization based on its ID.",
       "consumes": [
         "application/json",
         "application/xml"
@@ -114,7 +114,7 @@
           "description": "Resource instance data.",
           "required": true,
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         }
       ],
@@ -122,7 +122,7 @@
         "200": {
           "description": "OK (instance updated).",
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/organization"
           }
         },
         "400": {
@@ -132,10 +132,10 @@
     },
     "delete": {
       "tags": [
-        "Notifications"
+        "Organizations"
       ],
-      "summary": "Remove the Notification.",
-      "description": "This service removes an existing Notification based on its ID.",
+      "summary": "Remove the Organization.",
+      "description": "This service removes an existing Organization based on its ID.",
       "consumes": [
         "application/json",
         "application/xml"
@@ -155,7 +155,7 @@
       ],
       "responses": {
         "204": {
-          "description": "No Content (request was successful).",
+          "description": "No Content (request was successful)."
         }
       }
     }
