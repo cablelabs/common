@@ -2,11 +2,11 @@
   "/organizations/{id}": {
     "get": {
       "tags": [
-        "Organization"
+        "Organizations"
       ],
-      "summary": "Find a Organization.",
-      "description": "This service looks up an Organization.",
-      "displayName": "Request Intake - Organization",
+      "summary": "Get a single Organization.",
+      "description": "This service looks up a Organization by its ID.",
+      "displayName": "Organization",
       "produces": [
         "application/json",
         "application/xml"
@@ -17,37 +17,33 @@
           "name": "id",
           "description": "ID of instance that needs to be fetched.",
           "required": true,
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         {
           "in": "query",
-          "name": "view",
-          "description": "View of the resource that you want to get.",
+          "name": "filter",
+          "description": "Filter defining fields and include.",
           "required": false,
           "type": "string"
         }
       ],
       "responses": {
         "200": {
-          "description": "Successful operation.",
+          "description": "OK (successful operation).",
           "schema": {
             "$ref": "#/definitions/organization"
           }
         },
-        "400": {
-          "description": "Invalid ID supplied."
-        },
         "404": {
-          "description": "Instance not found."
+          "description": "Not Found."
         }
       }
     },
     "patch": {
       "tags": [
-        "Organization"
+        "Organizations"
       ],
-      "summary": "Partially update an existing Organization based on its ID.",
+      "summary": "Partially update the Organization.",
       "description": "This service partially updates an existing Organization based on its ID.",
       "consumes": [
         "application/json",
@@ -59,9 +55,16 @@
       ],
       "parameters": [
         {
+          "in": "path",
+          "name": "id",
+          "description": "ID of instance that needs to be updated.",
+          "required": true,
+          "type": "string"
+        },
+        {
           "in": "body",
-          "name": "body",
-          "description": "",
+          "name": "data",
+          "description": "Resource instance data.",
           "required": true,
           "schema": {
             "$ref": "#/definitions/organization"
@@ -69,14 +72,90 @@
         }
       ],
       "responses": {
-        "201": {
-          "description": "Instance updated.",
+        "200": {
+          "description": "OK (instance updated).",
           "schema": {
             "$ref": "#/definitions/organization"
           }
         },
-        "405": {
-          "description": "Invalid input."
+        "400": {
+          "description": "Bad Request."
+        },
+        "404": {
+          "description": "Not Found."
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Organizations"
+      ],
+      "summary": "Fully updates the Organization.",
+      "description": "This service updates an existing Organization based on its ID.",
+      "consumes": [
+        "application/json",
+        "application/xml"
+      ],
+      "produces": [
+        "application/json",
+        "application/xml"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "description": "ID of instance that needs to be updated.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "in": "body",
+          "name": "data",
+          "description": "Resource instance data.",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/organization"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK (instance updated).",
+          "schema": {
+            "$ref": "#/definitions/organization"
+          }
+        },
+        "400": {
+          "description": "Bad Request."
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Organizations"
+      ],
+      "summary": "Remove the Organization.",
+      "description": "This service removes an existing Organization based on its ID.",
+      "consumes": [
+        "application/json",
+        "application/xml"
+      ],
+      "produces": [
+        "application/json",
+        "application/xml"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "description": "ID of instance that needs to be deleted.",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "204": {
+          "description": "No Content (request was successful)."
         }
       }
     }

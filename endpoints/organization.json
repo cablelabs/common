@@ -3,77 +3,69 @@
     "get": {
       "tags": [
         "Local Access and Transport Area (Organization)"
-      ], 
-      "summary": "Fetch all Organizations that meet the query criteria.", 
-      "description": "This service fetches all Organizations that meet the query criteria.", 
-      "displayName": "Organization", 
+      ],
+      "summary": "Fetch all Organizations that meet the query criteria.",
+      "description": "This service fetches all Organizations that meet the query criteria.",
+      "displayName": "Organization",
       "produces": [
-        "application/json", 
+        "application/json",
         "application/xml"
-      ], 
+      ],
       "parameters": [
         {
-          "in": "query", 
-          "name": "query", 
-          "description": "Query criteria for filtering the list of Organizations.", 
-          "required": false, 
-          "type": "string", 
-          "format": "string"
-        }, 
-        {
-          "in": "query", 
-          "name": "view", 
-          "description": "View of the resource that you want to get.", 
-          "required": false, 
+          "in": "query",
+          "name": "filter",
+          "description": "Filter defining fields, where, include, order, offset, and limit.",
+          "required": false,
           "type": "string"
         }
-      ], 
+      ],
       "responses": {
         "200": {
-          "description": "Successful operation.", 
+          "description": "Successful operation.",
           "schema": {
             "$ref": "#/definitions/organizationList"
           }
-        }, 
-        "400": {
-          "description": "Invalid ID supplied."
-        }, 
-        "404": {
-          "description": "Instance not found."
         }
       }
     },
     "post": {
       "tags": [
         "Organization"
-      ], 
-      "summary": "Create a new Organization.", 
-      "description": "This service creates a new Organization.", 
+      ],
+      "summary": "Create a new Organization.",
+      "description": "This service creates a new Organization.",
       "consumes": [
-        "application/json", 
+        "application/json",
         "application/xml"
-      ], 
+      ],
       "produces": [
-        "application/json", 
+        "application/json",
         "application/xml"
-      ], 
+      ],
       "parameters": [
         {
-          "in": "body", 
-          "name": "body", 
-          "description": "", 
-          "required": true, 
+          "in": "body",
+          "name": "data",
+          "description": "Resource instance data.",
+          "required": true,
           "schema": {
             "$ref": "#/definitions/organization"
           }
         }
-      ], 
+      ],
       "responses": {
+        "200": {
+          "description": "Successful operation.",
+          "schema": {
+            "$ref": "#/definitions/organizationList"
+          }
+        },
         "201": {
           "description": "Instance created."
-        }, 
-        "405": {
-          "description": "Invalid input."
+        },
+        "400": {
+          "description": "Bad Request."
         }
       }
     }
