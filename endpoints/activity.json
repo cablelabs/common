@@ -1,14 +1,14 @@
 {
-  "/notifications": {
+  "/activity": {
     "get": {
       "tags": [
-        "Local Access and Transport Area (Notification)"
-      ], 
-      "summary": "Fetch all Notifications that meet the query criteria.", 
-      "description": "This service fetches all Notifications that meet the query criteria.", 
-      "displayName": "Notification", 
+        "Activity"
+      ],
+      "summary": "List activity matched by filter.",
+      "description": "This service fetches all activity that match the filter.",
+      "displayName": "Activity",
       "produces": [
-        "application/json", 
+        "application/json",
         "application/xml"
       ],
       "parameters": [
@@ -22,25 +22,25 @@
       ],
       "responses": {
         "200": {
-          "description": "Successful operation.",
+          "description": "OK (successful operation). NOTE: The list may be empty.",
           "schema": {
-            "$ref": "#/definitions/notificationList"
+            "$ref": "#/definitions/activityList"
           }
         }
       }
     },
     "post": {
       "tags": [
-        "Notification"
-      ], 
-      "summary": "Create a new Notification.", 
-      "description": "This service creates a new Notification.", 
+        "Activity"
+      ],
+      "summary": "Create an activity.",
+      "description": "This service creates an activity.",
       "consumes": [
-        "application/json", 
+        "application/json",
         "application/xml"
-      ], 
+      ],
       "produces": [
-        "application/json", 
+        "application/json",
         "application/xml"
       ],
       "parameters": [
@@ -50,20 +50,20 @@
           "description": "Resource instance data.",
           "required": true,
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/activity-create-update"
           }
         }
       ],
       "responses": {
         "200": {
-          "description": "Successful operation.",
-          "schema": {
-            "$ref": "#/definitions/notificationList"
-          }
+          "description": "OK (successful operation)."
         },
         "201": {
-          "description": "Instance created."
-        }, 
+          "description": "Created.",
+          "schema": {
+            "$ref": "#/definitions/activity"
+          }
+        },
         "400": {
           "description": "Bad Request."
         }

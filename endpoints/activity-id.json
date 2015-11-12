@@ -1,12 +1,12 @@
 {
-  "/notifications/{id}": {
+  "/activity/{id}": {
     "get": {
       "tags": [
-        "Notifications"
+        "Activity"
       ],
-      "summary": "Get a single Notification.",
-      "description": "This service looks up a Notification by its ID.",
-      "displayName": "Notification",
+      "summary": "Get a single activity.",
+      "description": "This service looks up an activity by its ID.",
+      "displayName": "Activity",
       "produces": [
         "application/json",
         "application/xml"
@@ -31,7 +31,7 @@
         "200": {
           "description": "OK (successful operation).",
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/activity"
           }
         },
         "404": {
@@ -41,10 +41,10 @@
     },
     "patch": {
       "tags": [
-        "Notifications"
+        "Activity"
       ],
-      "summary": "Partially update the Notification.",
-      "description": "This service partially updates an existing Notification based on its ID.",
+      "summary": "Partially update the activity.",
+      "description": "This service partially updates an existing activity based on its ID.",
       "consumes": [
         "application/json",
         "application/xml"
@@ -67,7 +67,7 @@
           "description": "Resource instance data.",
           "required": true,
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/activity-create-update"
           }
         }
       ],
@@ -75,7 +75,7 @@
         "200": {
           "description": "OK (instance updated).",
           "schema": {
-            "$ref": "#/definitions/notification"
+            "$ref": "#/definitions/activity"
           }
         },
         "400": {
@@ -86,56 +86,12 @@
         }
       }
     },
-    "put": {
-      "tags": [
-        "Notifications"
-      ],
-      "summary": "Fully updates the Notification.",
-      "description": "This service updates an existing Notification based on its ID.",
-      "consumes": [
-        "application/json",
-        "application/xml"
-      ],
-      "produces": [
-        "application/json",
-        "application/xml"
-      ],
-      "parameters": [
-        {
-          "in": "path",
-          "name": "id",
-          "description": "ID of instance that needs to be updated.",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "in": "body",
-          "name": "data",
-          "description": "Resource instance data.",
-          "required": true,
-          "schema": {
-            "$ref": "#/definitions/notification"
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK (instance updated).",
-          "schema": {
-            "$ref": "#/definitions/notification"
-          }
-        },
-        "400": {
-          "description": "Bad Request."
-        }
-      }
-    },
     "delete": {
       "tags": [
-        "Notifications"
+        "Activity"
       ],
-      "summary": "Remove the Notification.",
-      "description": "This service removes an existing Notification based on its ID.",
+      "summary": "Remove the activity.",
+      "description": "This service removes an existing activity based on its ID.",
       "consumes": [
         "application/json",
         "application/xml"
@@ -155,7 +111,7 @@
       ],
       "responses": {
         "204": {
-          "description": "No Content (request was successful).",
+          "description": "No Content (request was successful)."
         }
       }
     }
