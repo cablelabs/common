@@ -1,35 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "notification",
-  "id": "notification",
+  "title": "activity",
+  "id": "activity",
   "properties": {
     "id": {
       "type": "string",
-      "description": "A unique ID for the notification"
+      "description": "A unique ID for the activity."
     },
     "link": {
       "$ref": "link",
-      "description": "A self referencing link to the notification."
+      "description": "A self referencing link to the activity."
     },
     "regarding": {
       "$ref": "link",
-      "description": "A link to the URL resource affected."
+      "description": "A link to the resource affected by the activity."
     },
-    "type": {
+    "action": {
       "type": "string",
-      "description": "Type of notification",
-      "enum": [
-        "CREATED",
-        "UPDATED",
-        "DELETED",
-        "ARCHIVED",
-        "OTHER"
-      ]
+      "description": "The action being performed in the activity (e.g. CREATED, UPDATED, DELETED, ARCHIVED, etc.)."
+    },
+    "actionTime": {
+      "type": "string", 
+      "format": "date-time",
+      "description": "The date and time the action took place."
+    },
+    "username": {
+      "type": "string",
+      "description": "The username of the user who performed the action. This may be an API user and not a specific app user. The level of granularity is left to the creator of the activity."
     },
     "message": {
       "type": "string",
-      "description": "Notification message."
+      "description": "An activity message which may be used to supply addition information regarding the activity."
     }
   }
 }
