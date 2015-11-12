@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "activity-create-update",
+  "id": "activity-create-update",
+  "properties": {
+    "regarding": {
+      "$ref": "link",
+      "description": "A link to the resource affected by the activity."
+    },
+    "action": {
+      "type": "string",
+      "description": "The action being performed in the activity (e.g. CREATED, UPDATED, DELETED, ARCHIVED, etc.)."
+    },
+    "actionTime": {
+      "type": "string", 
+      "format": "date-time",
+      "description": "The date and time the action took place."
+    },
+    "username": {
+      "type": "string",
+      "description": "The username of the user who performed the action. This may be an API user and not a specific app user. The level of granularity is left to the creator of the activity."
+    },
+    "message": {
+      "type": "string",
+      "description": "An activity message which may be used to supply addition information regarding the activity."
+    }
+  }
+}
