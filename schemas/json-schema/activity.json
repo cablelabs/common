@@ -27,7 +27,7 @@
     },
     "responsibleParty": {
       "type": "string",
-      "description": "A reference to the party that performed the action on the resource. This could be the username of the User who performed the action. This could also be a reference to the Organization that was issued the key that was used to access the API endpoint to perform the action on the resource."
+      "description": "A reference to the party that performed the action on the resource. This could be the username of the User who performed the action. This could also be a reference to the party (e.g. Organization) that accessed the API endpoint to perform the action on the resource."
     },
     "message": {
       "type": "string",
