@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "notificationList",
-  "id": "notificationList",
+  "title": "activityList",
+  "id": "activityList",
   "type": "object",
   "properties": {
     "available": {
@@ -19,9 +19,9 @@
     "items": {
       "type": "array",
       "items": {
-        "$ref": "notification.json#"
+        "$ref": "activity.json#"
       },
-      "description": "An array for Order items."
+      "description": "An array of activity items."
     }
   }
 }
