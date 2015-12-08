@@ -35,6 +35,10 @@
         "$ref": "link.json#"
       },
       "description": "An array for all API urls (buy, sell, backup, etc...)."
+    },
+    "prefix": {
+      "type": "string",
+      "description": "Prefix used for ID generation."
     }
 
   }
