@@ -12,9 +12,16 @@
       "$ref": "link",
       "description": "A self referencing link to the activity."
     },
-    "regarding": {
+    "targetResource": {
       "$ref": "link",
       "description": "A link to the resource affected by the activity."
+    },
+    "relatedResources": {
+      "type": "array",
+      "items": {
+        "$ref": "link"  
+      },
+      "description": "An array of resources also related to this activity."
     },
     "action": {
       "type": "string",
