@@ -5,15 +5,15 @@
   "id": "activity-create-update",
   "properties": {
     "targetResource": {
-      "$ref": "link",
-      "description": "A link to the resource affected by the activity."
+      "$ref": "resourceReference",
+      "description": "A reference to the resource affected by the activity."
     },
     "relatedResources": {
       "type": "array",
       "items": {
-        "$ref": "link"  
+        "$ref": "resourceReference"  
       },
-      "description": "An array of resources also related to this activity."
+      "description": "An array of references to resources also related to this activity."
     },
     "action": {
       "type": "string",
