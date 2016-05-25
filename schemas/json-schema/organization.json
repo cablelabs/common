@@ -39,7 +39,17 @@
     "prefix": {
       "type": "string",
       "description": "Prefix used for ID generation."
+    },
+    "externalSytemId": {
+      "$ref": "externalSystemReference",
+      "description": "Id to an external system."
+    },
+    "extendedProperties": {
+      "type": "array",
+      "description": "A list of extendedProperties.",
+      "items": {
+        "$ref": "extendedProperty"
+      }
     }
-
   }
 }
